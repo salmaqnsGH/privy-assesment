@@ -2,9 +2,7 @@
 
 - [Requirements](#requirements)
 - [Instalation](#instalation)
-- [API Documentation](#api-documentation)
-  - [Postman Documentation](#postman-documentation)
-- [ERD (Entity Relationship Diagram)](#erd-entity-relationship-diagram)
+
 
 
 ## Requirements
@@ -14,28 +12,27 @@
 
 
 ## Installation
-1. Clone the repository:
-
+1. Create database 'privy'
    ```bash
-   git clone https://
+   create database privy;
    ```
-2. Install the dependencies:
+2. Create table 'employees'
+   ```bash
+   create table employees(id serial primary key, name varchar(255), age integer, salary integer);
+   ```
+   
+3. Install the dependencies:
     ```bash
     go get
     go mod tidy
     ```
-3. import psql file to your local database in /docs/psql
-4. configure your database connection in main.go file
+
+4. Configure your database connection APP_DB_USERNAME, APP_DB_PASSWORD, APP_DB_NAME in main.go file
+
 5. Run the application:
     ```bash
     go run main.go
     ```
+6. Run in postman with method GET
+  ``` http://localhost:8080/employees ```
 
-## API Documentation
-### Postman Documentation
-
-https://
-
-## ERD (Entity Relationship Diagram)
-
-![ERD](./docs/erd.png)
